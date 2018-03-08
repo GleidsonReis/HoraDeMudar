@@ -16,7 +16,7 @@
 		?>
         <div class="container">
             <div class="row">
-                <h1>Hello, world Muuuundo!</h1>
+                <h1>Hello, world Muuuundoooooo!</h1>
             </div>
         </div>
         <!-- Optional JavaScript -->
