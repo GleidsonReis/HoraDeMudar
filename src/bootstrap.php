@@ -8,7 +8,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
 
-        <title>Hello, world!</title>
+        <title>Hello, woorld!</title>
     </head>
     <body>
 	<?php
