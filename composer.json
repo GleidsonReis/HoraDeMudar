@@ -1,5 +1,5 @@
 {
-    "name": "PRIMEIRO PROJETO PPI2",
+    "name": "vendor/meu-projeto",
     "description": "Descrição do projeto MeuProjeto.",
     "authors": [
         {
@@ -8,11 +8,12 @@
         }
     ],
     "require": {
-        "php": ">=7.0.0"
+        "php":">=7.0.0"
     },
-    "autoload":{
-        "psr-4":{
-            "MeuProjeto\\":"src/"
-        }
-    }
+        "autoload":{
+                "psr-4":{
+                    "HoraDeMudar\\":"src/"
+                }
+            }
+     
 }
