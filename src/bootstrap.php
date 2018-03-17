@@ -1,7 +1,17 @@
-	<?php
+<?php
 namespace HoraDeMudar;
-use HoraDeMudar\Entidades\Produto;
-echo "Olá do Bootstrap!!!"
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
-Produto: ;
+
+require __DIR__.'/../vendor/autoload.php';
+$request = Request::createFromGlobals();
+$response = Response::create();
+
+
+$conteudo = '<h2> Galão da Massa </h2>';
+$response->setContent($conteudo);
+
+$response->send();
+
 ?>	
