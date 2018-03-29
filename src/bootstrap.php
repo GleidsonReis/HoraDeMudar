@@ -12,17 +12,34 @@ include 'rotas.php';
 
 $contexto = new RequestContext();
 $contexto->fromRequest(Request::createFromGlobals());
-$matcher = new UrlMatcher($rotas, $contexto);
+$response = Response::create();
+
+
+
+$matcher = new UrlMatcher($rotas, $contexto);// verifico se tem uma rota compativel com oque veio da URL
 
 
 //print_r($matcher->match($contexto->getPathInfo()));
-print_r($matcher->match('/esporte'));
+//print_r($matcher->match('/esporte'));
         
+try {
+    $atributos = $matcher->match($contexto->getPathInfo());// Aqui pego a Informação que o cara Digitou
+    $controller = $atributos['_controller'];
+    $method = $atributos['method'];
+    $parametros ='';
+    $obj = new $controller($response, $contexto);
+    $obj->$method();
+    
+    
+} catch (Exception $ex) {
+    $response->setContent('Deu erro em algo acima', Response::HTTP_NOT_FOUND);
+  
+    
+}
 
 
 
-
-
+$response->send();
 
 
 
@@ -31,7 +48,7 @@ print_r($matcher->match('/esporte'));
 
 
 /*        
-$response = Response::create();
+
 $conteudo = '<h2> Galão da Massa </h2>';
 $response->setContent($conteudo);
 

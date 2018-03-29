@@ -1,9 +1,28 @@
 <?php
 namespace HoraDeMudar\Controller;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\RequestContext;
 /*
  * 
  * 
  */
 class ControllerEsporte {
-    //put your code here
+    
+    private $response;
+    private $contexto;
+    
+    public function __construct(Response $response, RequestContext $contexto) {
+        $this->response = $response;
+        $this->contexto = $contexto;
+    }
+    
+    public function msgInicial(){
+    
+
+
+//criar um onjeto do tipo entidade // buscar no banco de dados
+        
+        
+        return $this->response->setContent($this->contexto->getPathInfo());
+    }
 }
