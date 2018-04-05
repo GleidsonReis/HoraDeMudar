@@ -14,34 +14,41 @@ $contexto = new RequestContext();
 $contexto->fromRequest(Request::createFromGlobals());
 $response = Response::create();
 
-
-
 $matcher = new UrlMatcher($rotas, $contexto);// verifico se tem uma rota compativel com oque veio da URL
-
 
 //print_r($matcher->match($contexto->getPathInfo()));
 //print_r($matcher->match('/esporte'));
-        
+       
 try {
     $atributos = $matcher->match($contexto->getPathInfo());// Aqui pego a Informação que o cara Digitou
+    
+    
     $controller = $atributos['_controller'];
     $method = $atributos['method'];
-    $parametros ='';
+    $parametros =$atributos['sufix'];
     $obj = new $controller($response, $contexto);
     $obj->$method();
     
     
+         if (isset($atributos['sufix'])){
+        $parametros = $atributos['sufix'];
+        $obj->$method($parametros);
+        echo"aqui";
+    }else {
+        echo"aaaqui";
+        $obj->$method('');
+        
+    }
 } catch (Exception $ex) {
     $response->setContent('Deu erro em algo acima', Response::HTTP_NOT_FOUND);
   
     
+echo 'erro';
 }
 
 
 
 $response->send();
-
-
 
 
 

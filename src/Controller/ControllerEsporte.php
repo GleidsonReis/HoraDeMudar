@@ -16,13 +16,10 @@ class ControllerEsporte {
         $this->contexto = $contexto;
     }
     
-    public function msgInicial(){
-    
-
+    public function msgInicial($parametro= ''){
 
 //criar um onjeto do tipo entidade // buscar no banco de dados
+      return $this->response->setContent('Categoria: '.$parametro);
         
-        
-        return $this->response->setContent($this->contexto->getPathInfo());
     }
 }

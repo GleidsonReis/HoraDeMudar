@@ -8,9 +8,9 @@ $rotas = new RouteCollection();
 
 
 
-$rotas->add('esporte', new Route('/esporte', array('_controller' => 'HoraDeMudar\Controller\ControllerEsporte',"method"=>'msgInicial')));
-$rotas->add('esporte', new Route('/financas', array('_controller' => 'HoraDeMudar\Controller\ControllerFinancas',"method"=>'msgInicial')));
-$rotas->add('esporte', new Route('/produtos', array('_controller' => 'HoraDeMudar\Controller\ControllerProdutos',"method"=>'msgInicial')));
+$rotas->add('esporte', new Route('/esporte/{sufix}', array('_controller' => 'HoraDeMudar\Controller\ControllerEsporte',"method"=>'msgInicial'),array('sufix'=>'','sufix'=>'.*')));
+$rotas->add('financas', new Route('/financas', array('_controller' => 'HoraDeMudar\Controller\ControllerFinancas',"method"=>'msgInicial')));
+$rotas->add('produtos', new Route('/produtos', array('_controller' => 'HoraDeMudar\Controller\ControllerProdutos',"method"=>'msgInicial')));
 
 
 return $rotas;
