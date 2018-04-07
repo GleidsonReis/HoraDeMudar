@@ -1,11 +1,9 @@
 <?php
 namespace HoraDeMudar\Controller;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\RequestContext;
-/*
- * 
- * 
- */
+
+ use Symfony\Component\HttpFoundation\Response;
+ use Symfony\Component\Routing\RequestContext;
+ 
 class ControllerEsporte {
     
     private $response;
@@ -16,10 +14,16 @@ class ControllerEsporte {
         $this->contexto = $contexto;
     }
     
-    public function msgInicial($parametro= ''){
-
-//criar um onjeto do tipo entidade // buscar no banco de dados
-      return $this->response->setContent('Categoria: '.$parametro);
-        
+    public function msgInicial($parametro){
+      if (!is_numeric($parametro) && $parametro !=''){
+          $parametro = 'nao localizado';
+      }
+      
+      
+      
+//criar um objeto do tipo entidade // buscar os dados no banco  de dado 
+       return $this->response->setContent('categoria: '.$parametro);
     }
+    
 }
+
