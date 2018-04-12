@@ -10,5 +10,8 @@ $rotas->add('esporte', new Route('/esportes/{suffix}',
 /* $rotas->add('esporte', new Route('/financas', array('_controller' => 'PPI2\Controller\ControllerFinancas', "method"=>'msgInicialFinancas')));
   $rotas->add('esporte', new Route('/produtos', array('_controller' => 'PPI2\Controller\ControllerProduto', "method"=>'listar')));
  */
+$rotas->add('produtos', new Route('/produtos',
+        array('_controller' => 'HoraDeMudar\Controller\ControllerEsporte',"method" => 'listarProdutos')));
+
 return $rotas;
 

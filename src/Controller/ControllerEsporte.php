@@ -3,8 +3,10 @@ namespace HoraDeMudar\Controller;
 
  use Symfony\Component\HttpFoundation\Response;
  use Symfony\Component\Routing\RequestContext;
+ use HoraDeMudar\Modelos\ModeloProdutos;
+
  
-class ControllerEsporte {
+ class ControllerEsporte {
     
     private $response;
     private $contexto;
@@ -25,5 +27,15 @@ class ControllerEsporte {
        return $this->response->setContent('categoria: '.$parametro);
     }
     
+    
+     public function listarProdutos(){
+         $modelo = new ModeloProdutos();
+         $dados = $modelo->listarProdutos();
+         return $this->response->setContent(print_r($dados));
+         
+         
+     }
+      
+      
 }
 
