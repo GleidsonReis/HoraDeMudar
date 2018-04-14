@@ -13,6 +13,10 @@ class ComposerStaticInitd47246a0d914a19bfd6e2f7d3f5e691b
     );
 
     public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Twig\\' => 5,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php70\\' => 23,
@@ -27,6 +31,10 @@ class ComposerStaticInitd47246a0d914a19bfd6e2f7d3f5e691b
     );
 
     public static $prefixDirsPsr4 = array (
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
         'Symfony\\Polyfill\\Php70\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php70',
@@ -49,6 +57,16 @@ class ComposerStaticInitd47246a0d914a19bfd6e2f7d3f5e691b
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
@@ -64,6 +82,7 @@ class ComposerStaticInitd47246a0d914a19bfd6e2f7d3f5e691b
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitd47246a0d914a19bfd6e2f7d3f5e691b::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitd47246a0d914a19bfd6e2f7d3f5e691b::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitd47246a0d914a19bfd6e2f7d3f5e691b::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitd47246a0d914a19bfd6e2f7d3f5e691b::$classMap;
 
         }, null, ClassLoader::class);
