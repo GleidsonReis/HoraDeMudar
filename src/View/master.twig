@@ -6,20 +6,29 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Visão Base</title>
+        <title>{%block titulo %}{%endblock titulo%}</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
     </head>
     <body>
-        <div>Qualquer coisa aqui !! texto ... 
-            <br><br><br>
-            {% for produto in dados %}
-                Produto : {{ produto.id }}<br>
-                Descrição : {{ produto.descricao }}<br>
-                Preço: {{ produto.preco }}<br>
-                <br>
-                <hr>
-                {% endfor %}
+        {% block conteudo %}
+        {{ include('componentes/menu.twig') }}
+         <div>TEXTO DA MASTER
+            
+{#            {% for produto in dados %}#}
+{#                Produto : {{ produto.id }}<br>
+{#                Descrição : {{ produto.descricao }}<br>
+{#                Preço: {{ produto.preco }}<br>
+{#                <br>
+{#                <hr>
+{#                {% endfor %}#}
         </div>
+        {% endblock %}
+            
+            
+        {% block rodape %}
+        {% endblock %}
     </body>
 </html>
