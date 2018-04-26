@@ -1,14 +1,24 @@
 {% extends "master.twig" %}
 
+
+
+
+
 {% block conteudo %}
-   {{ parent() }}
-   <br>
-     sobrescrevi o conteudo
+    {{ parent() }}
+   
     <br>
-    
+    sobrescrevi o conteudo
+    <br>
+    <button id="botao1" onclick="ajax();" value="valor_do_botao">Botão</button>
+    <div id="div_retorno">
+        <br>
+        aqui será injetado o retorno
+    </div>
+
 {% endblock%}
 
 {% block rodape %}
     {{ parent() }}
-{#    js que só vai na página#}
-    {% endblock %}
+    {#    js que só vai na página#}
+{% endblock %}
