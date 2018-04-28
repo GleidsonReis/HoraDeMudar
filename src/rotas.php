@@ -13,5 +13,10 @@ $rotas->add('esporte', new Route('/esportes/{suffix}',
 $rotas->add('produtos', new Route('/produtos',
         array('_controller' => 'HoraDeMudar\Controller\ControllerEsporte',"method" => 'listarProdutos')));
 
+$rotas->add('cadastro', new Route('/cadastro',
+        array('_controller' => 'HoraDeMudar\Controller\ControllerCadastro',"method" => 'show')));
+
+
+
 return $rotas;
 
