@@ -1,6 +1,21 @@
-{# empty Twig template #}
-{% extends "master.twig"%}
+{% extends "master.twig" %}
 
-{% block conteudo%}
-    VAMOS APRESENTAR UM FORMULARIO DE CADASTRO
+{% block conteudo %}
+   
+    
+    <form action="/cadastro" mehod="POST" class="form-group center-block text-muted">
+    <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+        
+{% endblock%}
 
+{% block rodape %}
+    {{ parent() }}
+    {#    js que só vai na página#}
+{% endblock %}

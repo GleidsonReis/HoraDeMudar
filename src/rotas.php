@@ -17,6 +17,9 @@ $rotas->add('cadastro', new Route('/cadastro',
         array('_controller' => 'HoraDeMudar\Controller\ControllerCadastro',"method" => 'show')));
 
 
+$rotas->add('formCadastro', new Route('/formularioCadastro',
+        array('_controller' => 'HoraDeMudar\Controller\ControllerCadastro',"method" => 'cadastro')));
+
 
 return $rotas;
 
