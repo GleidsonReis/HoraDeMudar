@@ -1,40 +1,33 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>{%block titulo %}{%endblock titulo%}</title>
+        <title>Meu projeto - {% block titulo %}{% endblock %}</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       
-        
+
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        {% block conteudo %}
-        {{ include('componentes/menu.twig') }}
-         <div>TEXTO DA MASTER
-            
-{#            {% for produto in dados %}#}
-{#                Produto : {{ produto.id }}<br>
-{#                Descrição : {{ produto.descricao }}<br>
-{#                Preço: {{ produto.preco }}<br>
-{#                <br>
-{#                <hr>
-{#                {% endfor %}#}
+        <div class="container">
+            {% block conteudo %}
+                {{ include('componentes/menu.twig') }}
+                <div>Texto da master<br>   
+                    {# {% for produto in dados %}
+                         Produto: {{ produto.id }} <br>
+                         Descrição: {{ produto.descricao|e }} <br> <div></div>
+                         Preço: {{ produto.preco }} <br>
+                         <br>
+                         <hr>
+                     {% endfor %}#}
+                </div>
+            {% endblock %}
+
+            {% block rodape %}
+
+                <script src="js/jquery-3.3.1.min.js" type="text/javascript" ></script>
+                <script src="js/funcoes.js" type="text/javascript" ></script>
+                <script src="js/bootstrap.min.js" type="text/javascript"></script>
+            {% endblock %}
         </div>
-        {% endblock %}
-            
-            
-        {% block rodape %}
-            
-            <script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
-            <script src="../js/funcoes.js" type="text/javascript"> </script>
-        {% endblock %}
     </body>
-     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-     <script src="js/bootstrap.min.js" type="text/javascript"></script>
-  
 </html>
